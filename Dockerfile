@@ -13,7 +13,7 @@ RUN python3 -m venv /opt/yt-dlp-venv \
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 COPY --chown=node:node src ./src
 
