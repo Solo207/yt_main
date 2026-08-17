@@ -21,12 +21,13 @@ router.post('/download', async (req, res) => {
   res.on('close', () => workspace.cleanup());
 
   try {
-const args = [
-  '-x', '--audio-format', 'mp3',
-  '--js-runtimes', 'node',
-  '--remote-components', 'ejs:github',
-];
-    
+    const args = [
+      '-x', '--audio-format', 'mp3',
+      '--js-runtimes', 'node',
+      '--remote-components', 'ejs:github',
+      '--ffmpeg-location', '/usr/bin/ffmpeg',
+    ];
+
     if (process.env.YTDLP_PROXY) {
       args.push('--proxy', process.env.YTDLP_PROXY);
     }
