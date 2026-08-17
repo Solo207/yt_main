@@ -21,8 +21,8 @@ router.post('/download', async (req, res) => {
   res.on('close', () => workspace.cleanup());
 
   try {
-    const args = ['-x', '--audio-format', 'mp3', '--ffmpeg-location', 'ffmpeg'];
-
+const args = ['-x', '--audio-format', 'mp3', '--js-runtimes', 'node'];
+    
     if (process.env.YTDLP_PROXY) {
       args.push('--proxy', process.env.YTDLP_PROXY);
     }
