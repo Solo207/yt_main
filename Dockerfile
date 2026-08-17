@@ -19,6 +19,6 @@ COPY --chown=node:node src ./src
 
 USER node
 
-EXPOSE 3000
+EXPOSE 3001
 
 CMD ["node", "src/server.js"]
